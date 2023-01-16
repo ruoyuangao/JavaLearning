@@ -14,7 +14,7 @@ Student CRUD
 
 GET /students: Return all the students in the university
 GET /student/{id}: Find student by id
-POST /students/add/{id}/{name}/{age}/{gender}/{gpa}: create a new student
+POST /students/add/{name}/{age}/{gender}/{gpa}: create a new student
 PUT /students/update/{id}/{name}/{age}/{gender}/{gpa}: Update the information of a specific student
 DELETE /student/{id}: Delete student by id
 
