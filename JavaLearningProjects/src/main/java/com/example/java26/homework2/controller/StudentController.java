@@ -53,6 +53,7 @@ public class StudentController {
                                           @PathVariable double gpa)
     {
         Student student = new Student();
+        student.setId(id);
         student.setName(name);
         student.setAge(age);
         student.setGender(gender);
