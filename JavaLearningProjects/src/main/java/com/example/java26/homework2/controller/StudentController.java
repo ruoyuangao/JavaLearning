@@ -73,8 +73,4 @@ public class StudentController {
         service.deleteStuById(id);
     }
 
-    @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<?> handleException() {
-        return new ResponseEntity<>("xxx not found", HttpStatus.NOT_FOUND);
-    }
 }
