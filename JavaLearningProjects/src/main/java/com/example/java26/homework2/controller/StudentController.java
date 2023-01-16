@@ -30,20 +30,14 @@ public class StudentController {
         return new ResponseEntity<>(service.getStuById(id), HttpStatus.OK);
     }
 
-    @PostMapping
-    public ResponseEntity<String> getStu(@RequestBody Student student) {
-        return new ResponseEntity<>("1", HttpStatus.OK);
-    }
 
-    @RequestMapping(value = "/add/{id}/{name}/{age}/{gender}/{gpa}")
-    public ResponseEntity<Student> addStu(@PathVariable String id,
-                           @PathVariable String name,
+    @RequestMapping(value = "/add/{name}/{age}/{gender}/{gpa}")
+    public ResponseEntity<Student> addStu(@PathVariable String name,
                            @PathVariable int age,
                            @PathVariable String gender,
                            @PathVariable double gpa)
     {
         Student student = new Student();
-        student.setId(id);
         student.setName(name);
         student.setAge(age);
         student.setGender(gender);
@@ -59,7 +53,6 @@ public class StudentController {
                                           @PathVariable double gpa)
     {
         Student student = new Student();
-        student.setId(id);
         student.setName(name);
         student.setAge(age);
         student.setGender(gender);
