@@ -1,4 +1,4 @@
-package com.example.java26.week3.rest.demo1.pojo.entity;
+package com.example.java26.homework2.pojo.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
@@ -6,20 +6,28 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.lang.annotation.Target;
 import java.util.Date;
 
+
+//studentInfo:
+//id (primary key), name, age, gender, gpa
 @Data
 @Entity
-@Table(name = "employee")
+@Table(name = "student")
 @AllArgsConstructor
 @NoArgsConstructor
-public class Employee {
+public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     @Column
     private String name;
+    @Column
+    private int age;
+    @Column
+    private String gender;
+    @Column
+    private double gpa;
     @Column
     @JsonIgnore
     private Date lastAccessDate;

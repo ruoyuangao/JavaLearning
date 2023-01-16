@@ -1,4 +1,5 @@
-package com.example.java26.week3.rest.demo1.exception;
+package com.example.java26.homework2.exception;
+
 
 public class ResourceNotFoundException extends RuntimeException{
     public ResourceNotFoundException(String message) {

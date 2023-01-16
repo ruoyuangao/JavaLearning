@@ -1,4 +1,4 @@
-package com.example.java26.week3.rest.demo1.config;
+package com.example.java26.homework2.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
