@@ -18,7 +18,6 @@ import java.util.Date;
 @NoArgsConstructor
 public class Student {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     @Column
     private String name;
@@ -28,10 +27,4 @@ public class Student {
     private String gender;
     @Column
     private double gpa;
-    @Column
-    @JsonIgnore
-    private Date lastAccessDate;
-    @Column
-    @JsonIgnore
-    private boolean isActive;
 }

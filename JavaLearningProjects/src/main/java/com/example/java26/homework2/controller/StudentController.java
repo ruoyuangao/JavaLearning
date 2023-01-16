@@ -21,18 +21,56 @@ public class StudentController {
     }
 
     @GetMapping
-    public ResponseEntity<StudentResponseDTO> getEmp(@RequestParam(required = false) String name) {
+    public ResponseEntity<StudentResponseDTO> getStu(@RequestParam(required = false) String name) {
         return new ResponseEntity<>(service.getAllStu(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<StudentResponseDTO.StudentDTO> getEmpById(@PathVariable String id) {
+    public ResponseEntity<StudentResponseDTO.StudentDTO> getStuById(@PathVariable String id) {
         return new ResponseEntity<>(service.getStuById(id), HttpStatus.OK);
     }
 
     @PostMapping
-    public ResponseEntity<String> getEmp(@RequestBody Student student) {
+    public ResponseEntity<String> getStu(@RequestBody Student student) {
         return new ResponseEntity<>("1", HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/add/{id}/{name}/{age}/{gender}/{gpa}")
+    public ResponseEntity<Student> addStu(@PathVariable String id,
+                           @PathVariable String name,
+                           @PathVariable int age,
+                           @PathVariable String gender,
+                           @PathVariable double gpa)
+    {
+        Student student = new Student();
+        student.setId(id);
+        student.setName(name);
+        student.setAge(age);
+        student.setGender(gender);
+        student.setGpa(gpa);
+        return new ResponseEntity<>(service.createStu(student),HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/update/{id}/{name}/{age}/{gender}/{gpa}")
+    public ResponseEntity<Student> updateStu(@PathVariable String id,
+                                          @PathVariable String name,
+                                          @PathVariable int age,
+                                          @PathVariable String gender,
+                                          @PathVariable double gpa)
+    {
+        Student student = new Student();
+        student.setId(id);
+        student.setName(name);
+        student.setAge(age);
+        student.setGender(gender);
+        student.setGpa(gpa);
+        return new ResponseEntity<>(service.updateStu(student),HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/delete/{id}")
+    public void deleteById(@PathVariable String id)
+    {
+        service.deleteStuById(id);
     }
 
     @ExceptionHandler(ResourceNotFoundException.class)

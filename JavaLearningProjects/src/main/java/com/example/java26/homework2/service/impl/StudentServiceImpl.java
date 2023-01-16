@@ -8,10 +8,12 @@ import com.example.java26.homework2.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 @Service
+@Transactional
 public class StudentServiceImpl implements StudentService {
     private final StudentRepository studentRepository;
 
@@ -40,5 +42,31 @@ public class StudentServiceImpl implements StudentService {
         }
         return new StudentResponseDTO.StudentDTO(student);
     }
+
+    @Override
+    public Student createStu(Student student){
+        return studentRepository.save(student);
+    }
+
+    @Override
+    public Student updateStu(Student student){
+        return studentRepository.save(student);
+    }
+
+    @Override
+    public boolean deleteStuById(String id) {
+        boolean result = true;
+        try {
+            studentRepository.deleteById(id);
+        }
+        catch (Exception e) {
+            result = false;
+        }
+        return result;
+
+    }
+
+
+
 
 }

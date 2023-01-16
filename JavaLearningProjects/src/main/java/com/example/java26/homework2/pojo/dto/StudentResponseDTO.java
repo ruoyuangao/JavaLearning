@@ -1,10 +1,10 @@
 package com.example.java26.homework2.pojo.dto;
 
 import com.example.java26.homework2.pojo.entity.Student;
-import com.example.java26.week3.rest.demo1.pojo.entity.Employee;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Setter;
 
 import java.util.List;
 
@@ -14,6 +14,7 @@ public class StudentResponseDTO {
     private List<StudentDTO> studentList;
 
     @Data
+    @Setter
     @AllArgsConstructor
     @Builder
     public static class StudentDTO {
