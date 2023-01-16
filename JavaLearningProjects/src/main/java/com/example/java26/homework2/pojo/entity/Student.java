@@ -18,6 +18,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class Student {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     @Column
     private String name;
