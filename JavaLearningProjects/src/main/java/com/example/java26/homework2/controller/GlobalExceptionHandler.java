@@ -18,5 +18,5 @@ public class GlobalExceptionHandler {
     public ResponseEntity<?> handleException() {
         return new ResponseEntity<>("xxx not found", HttpStatus.NOT_FOUND);
     }
-    
+
 }
